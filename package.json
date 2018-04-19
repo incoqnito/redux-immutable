@@ -46,6 +46,7 @@
     "test": "mocha --compilers js:babel-register './tests/**/*.js'",
     "build": "babel ./src --source-maps --out-dir ./dist",
     "benchmark": "NODE_ENV=production node ./benchmarks/index.js",
-    "precommit": "npm run lint && npm run test"
+    "precommit": "npm run lint && npm run test",
+    "prepublishOnly": "npm run build"
   }
 }
