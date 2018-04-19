@@ -1,6 +1,6 @@
 {
-  "name": "redux-immutable",
-  "description": "redux-immutable is used to create an equivalent function of Redux combineReducers that works with Immutable.js state.",
+  "name": "@incoqnito.io/redux-immutable",
+  "description": "redux-immutable is used to create an equivalent function of Redux combineReducers that works with Immutable.js state. Our version also enables you to add reducers at runtime to allow for efficient code splitting.",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
@@ -8,7 +8,9 @@
   },
   "keywords": [
     "immutable",
-    "redux"
+    "redux",
+    "add reducer",
+    "runtime"
   ],
   "version": "3.0.10",
   "author": {

@@ -8,7 +8,7 @@ export default (reducers: Object, getDefaultState: ?Function = Immutable.Map): F
   const reducerKeys = Object.keys(reducers);
 
   // eslint-disable-next-line space-infix-ops
-  return (inputState: ?Function = getDefaultState(), action: Object): Immutable.Map => {
+  const rootReducer = (inputState: ?Function = getDefaultState(), action: Object): Immutable.Map => {
     // eslint-disable-next-line no-process-env
     if (process.env.NODE_ENV !== 'production') {
       const warningMessage = getUnexpectedInvocationParameterMessage(inputState, reducers, action);
@@ -32,4 +32,11 @@ export default (reducers: Object, getDefaultState: ?Function = Immutable.Map): F
         });
       });
   };
+
+  rootReducer.addReducer = (name, reducer) => {
+    reducers[name] = reducer;
+    reducerKeys.push(name);
+  };
+
+  return rootReducer;
 };
